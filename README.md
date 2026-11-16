@@ -93,7 +93,7 @@ fred@ip-10-114-143-156:/var/log/apache2$ cat access.log.1 | grep nmap | awk '{pr
 
 * caminho estranho é: /nmaplowercheck1618912425*
 
---- 
+---
 # Parte 2
 ## Parte 2.1 - arquivo que permite fazer upload de arquivos
 
@@ -205,10 +205,8 @@ Essa conta é perigosa porque tem *UID setado pra 0*, ou seja, com os mesmos pre
 | (Agendado via cron) | 192.168.56.206 | Persistência: Reverse shell aberta a cada minuto pela conta `root2` | `/etc/crontab` · `grep -v '^#' /etc/crontab` |
 | (Após o POST) | Local | Criação da conta backdoor `root2` com UID 0 | `/etc/passwd` · `awk -F: '$3 == 0' /etc/passwd` |
 
-## Parte 5.2 - recomendações para a ACME 
+## Parte 5.2 - recomendações para a ACME
 
 *Possíveis correções:*
   - Fazer revisão do código php do arquivo contact.php, e mitigar a possível falha que permite subir uma webshell;
   - Atualizar o sistema operativo do server, e excluir possíveis brechas que permitiram ao atacante escalonar previlégios para root.
-
-
